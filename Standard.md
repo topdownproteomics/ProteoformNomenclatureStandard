@@ -49,9 +49,9 @@ SEQUEN[mod:Methyl|mass:+14.02]CE
 ```
 This is read as a methylation of an asparagine residue, with a mass shift of +14.02 Da.
 
-###Rule 5
+### Rule 5
 The supported descriptors are: Mass, Chemical Formula, Additional Information, Modification Name, and Database Accession. The use of each is detailed below. A key must be present in a descriptor if it is mandatory, and an optional key may be omitted.
-MASS: 
+#### MASS: 
 Key (Mandatory): mass
 Specification: Mass difference in Daltons between the coded amino acid and the observed mass. Can be used to show the location of an unclassified mass shift. Arbitrary precision is allowed, and positive mass shifts can be specified with either a plus sign or no sign. Negative shifts must be specified with a negative sign. The mass is assumed to be observed monoisotopic unless there is an INFO tag (below) explaining otherwise.
 ```
@@ -60,7 +60,7 @@ SEQ[mass:+16]UENCE
 SEQ[mass:16]UENCE
 ```
 These three examples could refer to the same proteoform.
-CHEMICAL FORMULA: 
+#### CHEMICAL FORMULA: 
 Key (Mandatory): formula
 Specification: Chemical formulas of modifications may be specified using this descriptor. Formulas must use the UniMod sysmbols provided here: http://www.unimod.org/masses.html, and follow the rules under Composition at http://www.unimod.org/fields.html.
 ```
@@ -79,14 +79,14 @@ The following resources don’t use parentheses in the way Unimod does
    PSI-MOD (http://www.ebi.ac.uk/ols/ontologies/mod/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMOD_00198)
    ChemCalc (http://www.chemcalc.org/)
 
-ADDITIONAL INFORMATION: 
+#### ADDITIONAL INFORMATION: 
 Key (Mandatory): info
 Specification: This descriptor is used to signal that unstructured text has been added to the tag. It is expected that this will be used in the development of new descriptors, and is included to allow the maximum utility of this system. Descriptors may not contain the pipe character.
 
 ```
 SEQ[info: Some comment about this amino acid]UENCE
 ```
-MODIFICATION NAME: 
+#### MODIFICATION NAME: 
 Key (Optional): mod
 Specification: A common name for the modification. The default names are the UniMod Interim Names available here (http://www.unimod.org/modifications_list.php). 
 ```
@@ -106,7 +106,7 @@ The allowed values must come from the following fields:
 	RESID - Name
 	PSI-MOD - Short label
 	BRNO - Common nomenclatures used for histone PTMs (e.g. ph, me1, ac)
-DATABASE ACCESSION:
+#### DATABASE ACCESSION:
 Key (Mandatory): One of the allowed database names: Unimod, UniProt, RESID, PSI-MOD, UniCarbKB, PROOntology, or BRNO
 Specification: This descriptor is used to link the modification to a database entry by means of a database accession number.
 ```
@@ -115,7 +115,7 @@ PEPT[UniProt:PTM-0254]IDE
 PEPT[RESID:AA0038]IDE
 PEPT[PSI-MOD:MOD:00047]IDE
 ```
-	
+
 Comment: There are a number of competing databases which provide both names and accession number for the various modifications that can occur to amino acids. It is not the intention of this protocol to force users to one or another of these databases.
  
 Supported PTM databases
@@ -148,15 +148,17 @@ The tag describing the terminal modifications is separated with a dash to the le
 ```
 [mass:-17.027]-QUENCE-[Amidation]
 ```
+
 ## Definitions
-* Descriptor: 	Member of the tag. Could be a key-value pair, or a keyless entry.
-* Human Readable:	A strong emphasis is placed on human readability for proteoform names. Proteoforms should be names in a manner that would allow general audience members to know exactly the sequence of amino acids and the positions of any modifications, described in as accurate detail as possible.
-* Key: 	An optional element of a descriptor that specifies the descriptor type. It must be followed by a colon and a value.
-* Machine Readable:	Adherence to the conventions described above should facility the creation and utilization of generic parsers so that proteoforms could be exchanged between users using a computer interface.
-* Modification:	Includes the addition and subtraction of specific atoms, atom combinations and/or masses, at a specific residue in a proteoform
-* Proteoform: 	A specific set of amino acids arranged in a particular order, which may be further modified (cotranslationally, posttranslationally or chemically) at designated locations.
-* Tag: 	The specified way of writing a localized modification. Everything between ‘[‘ and ‘]’ (inclusive). A collection of descriptors. 
-* Value: 	Contents of a descriptor, such as the mass, chemical composition, or modification name.
+* Descriptor: Member of the tag. Could be a key-value pair, or a keyless entry.
+* Human Readable: A strong emphasis is placed on human readability for proteoform names. Proteoforms should be names in a manner that would allow general audience members to know exactly the sequence of amino acids and the positions of any modifications, described in as accurate detail as possible.
+* Key: An optional element of a descriptor that specifies the descriptor type. It must be followed by a colon and a value.
+* Machine Readable: Adherence to the conventions described above should facility the creation and utilization of generic parsers so that proteoforms could be exchanged between users using a computer interface.
+* Modification: Includes the addition and subtraction of specific atoms, atom combinations and/or masses, at a specific residue in a proteoform
+* Proteoform: A specific set of amino acids arranged in a particular order, which may be further modified (cotranslationally, posttranslationally or chemically) at designated locations.
+* Tag: The specified way of writing a localized modification. Everything between ‘[‘ and ‘]’ (inclusive). A collection of descriptors. 
+* Value: Contents of a descriptor, such as the mass, chemical composition, or modification name.
+
 ## Best Practices
 The best practices emphasize human readability and clarity of modification identities for publishing sequences.
 * In the pipe-separated list, the most descriptive element should go first to improve human readability.
@@ -187,6 +189,3 @@ Extensive description of PTMs using descriptors and IDs from different databases
 MTLFQLLREHWVHILVPAGFVFGCYLDRKDDEKLTA[mass:-37.995001|info:unknown modification]FRNKSMLFQRELRPNEEVTWK
 ```
 Unknown modifications are best described by their mass shift and marked as unknown.
-
-
-
