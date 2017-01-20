@@ -31,19 +31,21 @@ SEQUXXCE
 ```
 This is a partially characterized sequence.
 
-Rule 2
+### Rule 2
 Tags are used to signal information regarding a modification; they are denoted by square brackets. . Tags are placed after the character representing the modified amino acid. Multiple modifications of the same amino acid are described by multiple square bracket pairs.
 	e.g. SEQUK[Unimod:Label:13C(3)][Acetyl]ENCE
-Rule 3
+
+### Rule 3
 Tags contain Descriptors that take the form of Key/Value pairs, where the Key and Value are separated by colons. The Key alerts the reader to the type of the descriptor. Some descriptors have implied keys that do not need to be written out, see Rules 5 and 6.
 e.g. SEQUEN[mass:+14.02]CE
 This is read as a +14.02 Da mass shift on an asparagine residue.
-Rule 4
+
+### Rule 4
 Multiple descriptors can be placed in a single tag, provided they are separated by pipes.
 e.g. SEQUEN[mod:Methyl|mass:+14.02]CE
 This is read as a methylation of an asparagine residue, with a mass shift of +14.02 Da.
 
-Rule 5
+###Rule 5
 The supported descriptors are: Mass, Chemical Formula, Additional Information, Modification Name, and Database Accession. The use of each is detailed below. A key must be present in a descriptor if it is mandatory, and an optional key may be omitted.
 MASS: 
 Key (Mandatory): mass
@@ -114,7 +116,8 @@ UniCarbKB (acceptable) - http://www.unicarbkb.org/
 PRO Ontology/NCBI  (acceptable) -  http://pir.georgetown.edu/pro/ 
 
 NOTE: We the subcommittee, ask the CTDP to recommend a small set of DBs as prefered, or to give formal guidance on how users should navigate the proliferation of modification databases. 
-Rule 6
+
+### Rule 6
 If all tags in a proteoform use the same Key, the sequence may be PREFIXED with a single tag defining the Key followed by a plus sign.
 
 	e.g. [RESID]+SE[12]QUE[42]NCE
@@ -122,7 +125,8 @@ Here the numbers in brackets are accession numbers in the resid database
 e.g. [mass]+SE[12]QUE[42]NCE
 Here the numbers in brackets are masses
 e.g. [formula]+SE[CH(2)]QUE[H(2)O]NCE
-Rule 7
+
+### Rule 7
 The tag describing the terminal modifications is separated with a dash to the left of the N-terminal amino acid, and the right of a C-terminal amino acid.
 
 e.g. [mass:-17.027]-QUENCE-[Amidation]
@@ -136,31 +140,42 @@ Modification:	Includes the addition and subtraction of specific atoms, atom comb
 Proteoform: 	A specific set of amino acids arranged in a particular order, which may be further modified (cotranslationally, posttranslationally or chemically) at designated locations.
 Tag: 	The specified way of writing a localized modification. Everything between ‘[‘ and ‘]’ (inclusive). A collection of descriptors. 
 Value: 	Contents of a descriptor, such as the mass, chemical composition, or modification name.
-Best Practices
+
+## Best Practices
 The best practices emphasize human readability and clarity of modification identities for publishing sequences.
 
-In the pipe-separated list, the most descriptive element should go first to improve human readability.
-If the identity of a modification is known, it should be listed. This improves the clarity over listing only masses or accessions.
-Rule 6 should be used when there is only one element in the tag -- otherwise, human readability is compromised.
-Spacing before and after each descriptor is arbitrary, and should be appropriately added to improve readability.
-In the case of multiple key value pairs, UniMod interim names without key are recommended to come first for human readability.
-Examples
+* In the pipe-separated list, the most descriptive element should go first to improve human readability.
+* If the identity of a modification is known, it should be listed. This improves the clarity over listing only masses or accessions.
+* Rule 6 should be used when there is only one element in the tag -- otherwise, human readability is compromised.
+* Spacing before and after each descriptor is arbitrary, and should be appropriately added to improve readability.
+* In the case of multiple key value pairs, UniMod interim names without key are recommended to come first for human readability.
 
+## Examples
+
+```
 [Acetyl]-S[Phospho|mass:79.966331]GRGK[Acetyl|Unimod:1|mass:42.010565]QGGKARAKAKTRSSRAGLQFPVGRVHRLLRKGNYAERVGAGAPVYLAAVLEYLTAEILELAGNAARDNKKTRIIPRHLQLAIRNDEELNKLLGKVTIAQGGVLPNIQAVLLPKKT[Unimod:21]ESHHKAKGK
+```
 This is one way to write Histone H4 with several modifications. It is human-readable and conforms to the best practices.
 Long version: The sequence describes histone H4 having its N-terminal acetylated (Unimod interim name Acetyl), Serine 1 phosphorylated (Unimod interim name Phospho and mass 79.966331), Lysine 5 acetylated (Unimod interim name Acetyl, Unimod ID 1 and mass 42.010565) and Threonine 96 phosphorylated (Unimod accession 21). 
 
+```
 [Unimod]+[mod: Acetyl]-S[mod: Phospho| mass:79.966331]GRGK[mod:Acetyl|1 |mass:42.010565]QGGKARAKAKTRSSRAGLQFPVGRVHRLLRKGNYAERVGAGAPVYLAAVLEYLTAEILELAGNAARDNKKTRIIPRHLQLAIRNDEELNKLLGKVTIAQGGVLPNIQAVLLPKKT[21]ESHHKAKGK
+```
 Although this is valid, the UniMod accessions end up looking like mass, and thus may be less clear to a human reader. This violates best practices rule 3, which discourages the use of prefix notation with more than one descriptor. 
 
+```
 [Unimod]+[1]-S[21]GRGK[1]QGGKARAKAKTRSSRAGLQFPVGRVHRLLRKGNYAERVGAGAPVYLAAVLEYLTAEILELAGNAARDNKKTRIIPRHLQLAIRNDEELNKLLGKVTIAQGGVLPNIQAVLLPKKT[21]ESHHKAKGK
+```
 This is a valid and compact way of specifying Unimod accessions in multiple locations in the sequence. 
-	 	 	 	
-[myristoleylation|Myristoleyl(PSI-MOD)|info:Acylation]-MTLFQLLREHWVHILVPAGFVFGCYLDRKDDEK[di-Methylation|Dimethyl(PSI-MOD)]LTAFRNK[p-adenosine|N6-(phospho-5'-adenosine)-L-lysine(RESID)|RESID:AA0227|PSI-MOD:00232|N6AMPLys(PSI-MOD)]SMLFQRELRPNEEVTWK
-Extensive description of PTMs using descriptors and IDs from different databases. Less common PTMs can so be better recognized.
 
+```
+[myristoleylation|Myristoleyl(PSI-MOD)|info:Acylation]-MTLFQLLREHWVHILVPAGFVFGCYLDRKDDEK[di-Methylation|Dimethyl(PSI-MOD)]LTAFRNK[p-adenosine|N6-(phospho-5'-adenosine)-L-lysine(RESID)|RESID:AA0227|PSI-MOD:00232|N6AMPLys(PSI-MOD)]SMLFQRELRPNEEVTWK
+```
+Extensive description of PTMs using descriptors and IDs from different databases. Less common PTMs can so be better recognized.
+```
 MTLFQLLREHWVHILVPAGFVFGCYLDRKDDEKLTA[mass:-37.995001|info:unknown modification]FRNKSMLFQRELRPNEEVTWK
-	Unknown modifications are best described by their mass shift and marked as unknown.
+```
+Unknown modifications are best described by their mass shift and marked as unknown.
 
 
 
