@@ -51,7 +51,7 @@ This is read as a methylation of an asparagine residue, with a mass shift of +14
 
 ### Rule 5
 The supported descriptors are: Mass, Chemical Formula, Additional Information, Modification Name, and Database Accession. The use of each is detailed below. A key must be present in a descriptor if it is mandatory, and an optional key may be omitted.
-#### MASS
+* MASS
 Key (Mandatory): mass
 Specification: Mass difference in Daltons between the coded amino acid and the observed mass. Can be used to show the location of an unclassified mass shift. Arbitrary precision is allowed, and positive mass shifts can be specified with either a plus sign or no sign. Negative shifts must be specified with a negative sign. The mass is assumed to be observed monoisotopic unless there is an INFO tag (below) explaining otherwise.
 ```
@@ -60,7 +60,7 @@ SEQ[mass:+16]UENCE
 SEQ[mass:16]UENCE
 ```
 These three examples could refer to the same proteoform.
-#### CHEMICAL FORMULA
+* CHEMICAL FORMULA
 Key (Mandatory): formula
 Specification: Chemical formulas of modifications may be specified using this descriptor. Formulas must use the UniMod sysmbols provided here: http://www.unimod.org/masses.html, and follow the rules under Composition at http://www.unimod.org/fields.html.
 ```
@@ -79,14 +79,14 @@ The following resources don’t use parentheses in the way Unimod does
    PSI-MOD (http://www.ebi.ac.uk/ols/ontologies/mod/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMOD_00198)
    ChemCalc (http://www.chemcalc.org/)
 
-#### ADDITIONAL INFORMATION
+* ADDITIONAL INFORMATION
 Key (Mandatory): info
 Specification: This descriptor is used to signal that unstructured text has been added to the tag. It is expected that this will be used in the development of new descriptors, and is included to allow the maximum utility of this system. Descriptors may not contain the pipe character.
 
 ```
 SEQ[info: Some comment about this amino acid]UENCE
 ```
-#### MODIFICATION NAME
+* MODIFICATION NAME
 Key (Optional): mod
 Specification: A common name for the modification. The default names are the UniMod Interim Names available here (http://www.unimod.org/modifications_list.php). 
 ```
@@ -106,7 +106,7 @@ The allowed values must come from the following fields:
 	RESID - Name
 	PSI-MOD - Short label
 	BRNO - Common nomenclatures used for histone PTMs (e.g. ph, me1, ac)
-#### DATABASE ACCESSION
+* DATABASE ACCESSION
 Key (Mandatory): One of the allowed database names: Unimod, UniProt, RESID, PSI-MOD, UniCarbKB, PROOntology, or BRNO
 Specification: This descriptor is used to link the modification to a database entry by means of a database accession number.
 ```
