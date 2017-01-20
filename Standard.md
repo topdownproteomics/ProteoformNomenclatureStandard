@@ -1,8 +1,6 @@
 #Proteoform Nomenclature Standard
 
-This document gives seven rules for writing a fully characterized proteoform. This nomenclature is intended to be both machine and human readable, and to be sufficiently flexible to meet current and foreseeable needs. Additionally, examples and a series of recommended Best Practices are provided.
-
-Subcommittee Members
+Authors
 * Richard LeDuc, Northwestern University (Chair)
 * Veit Schwämmle, University of South Denmark
 * Michael Shortreed, University of Wisconsin-Madison
@@ -11,20 +9,20 @@ Subcommittee Members
 * Jared Shaw, Pacific Northwest National laboratory
 
 ## Introduction
-Our subcommittee was tasked to propose a nomenclature that can be used to write the sequence of a given proteoform. A proteoform is a specific set of amino acids arranged in a particular order, which may be further modified (cotranslationally, posttranslationally or chemically) at designated locations. We met via phone, working on electronically shared documents, for an hour a week between November and December 2016. Our task is described below:
+This document gives seven rules for writing a fully characterized proteoform. A proteoform is a specific set of amino acids arranged in a particular order, which may be further modified (cotranslationally, posttranslationally or chemically) at designated locations. This nomenclature is intended to be both machine and human readable, and to be sufficiently flexible to meet current and foreseeable needs. Examples and a series of recommended Best Practices are provided.
 
-Task: provide an unambiguous notation for writing an individual proteoform. The notation must:
+The notation must:
+* Provide an unambiguous way for writing an individual proteoform.
 * Be Human readable. Suitable for display in written document or presentation.
 * Be Machine parsable. 
 * Contain the complete amino acid sequence of the observed proteoform
 * Specify the location and type of each modification.
 
-## Proposed Nomenclature
+## The Nomenclature
 The proposal consists of a series of rules for writing a proteoform sequence with modifications.  The sequence written is the sequence in question, whether observed or hypothesized, as opposed to the canonical sequence. Amino acids not observed are excluded from the nomenclature. For example, N-terminal M cleavages are noted simply by not including the terminal M in the sequence.
 
 ### Rule 1
 The base sequence of the proteoform is written using the standard capitalized single character amino acid codes. Although ambiguous characters, such as J and X, can be used, no characterized proteoform can contain these symbols.
-
 ```
 SEQUENCE
 SEQUXXCE
@@ -33,11 +31,16 @@ This is a partially characterized sequence.
 
 ### Rule 2
 Tags are used to signal information regarding a modification; they are denoted by square brackets. . Tags are placed after the character representing the modified amino acid. Multiple modifications of the same amino acid are described by multiple square bracket pairs.
-	e.g. SEQUK[Unimod:Label:13C(3)][Acetyl]ENCE
+
+```
+SEQUK[Unimod:Label:13C(3)][Acetyl]ENCE
+```
 
 ### Rule 3
 Tags contain Descriptors that take the form of Key/Value pairs, where the Key and Value are separated by colons. The Key alerts the reader to the type of the descriptor. Some descriptors have implied keys that do not need to be written out, see Rules 5 and 6.
-e.g. SEQUEN[mass:+14.02]CE
+```
+SEQUEN[mass:+14.02]CE
+```
 This is read as a +14.02 Da mass shift on an asparagine residue.
 
 ### Rule 4
