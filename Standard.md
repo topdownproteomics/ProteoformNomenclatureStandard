@@ -1,4 +1,4 @@
-#Proteoform Nomenclature Standard
+# Proteoform Nomenclature Standard
 
 Authors
 * Richard LeDuc, Northwestern University (Chair)
