@@ -14,7 +14,7 @@ This document gives seven rules for writing a fully characterized proteoform. A 
 The notation must:
 * Provide an unambiguous way for writing an individual proteoform.
 * Be Human readable. Suitable for display in written document or presentation.
-* Be Machine parsable. 
+* Be Machine parsable.
 * Contain the complete amino acid sequence of the observed proteoform
 * Specify the location and type of each modification.
 
@@ -30,13 +30,13 @@ SEQUXXCE
 This is a partially characterized sequence.
 
 ### Rule 2
-Tags are used to signal information regarding a modification; they are denoted by square brackets. . Tags are placed after the character representing the modified amino acid. Multiple modifications of the same amino acid are described by multiple square bracket pairs.
+Tags are used to signal information regarding a modification; they are denoted by square brackets.  Tags are placed after the character representing the modified amino acid. Multiple modifications of the same amino acid are described by multiple square bracket pairs.
 ```
 SEQUK[Unimod:Label:13C(3)][Acetyl]ENCE
 ```
 
 ### Rule 3
-Tags contain Descriptors that take the form of Key/Value pairs, where the Key and Value are separated by colons. The Key alerts the reader to the type of the descriptor. Some descriptors have implied keys that do not need to be written out, see Rules 5 and 6.
+Tags contain descriptors that take the form of key-value pairs, where the key and value are separated by colons. The key alerts the reader to the type of the descriptor. Some descriptors have implied keys that do not need to be written out, see Rules 5 and 6.
 ```
 SEQUEN[mass:+14.02]CE
 ```
@@ -62,13 +62,13 @@ SEQ[mass:16]UENCE
 These three examples could refer to the same proteoform.
 #### CHEMICAL FORMULA
 Key (Mandatory): formula
-Specification: Chemical formulas of modifications may be specified using this descriptor. Formulas must use the UniMod sysmbols provided here: http://www.unimod.org/masses.html, and follow the rules under Composition at http://www.unimod.org/fields.html.
+Specification: Chemical formulas of modifications may be specified using this descriptor. Formulas must use the Unimod symbols provided here: http://www.unimod.org/masses.html, and follow the rules under Composition at http://www.unimod.org/fields.html.
 ```
-SEQUEN[Methyl|formula:H(2)C]CE 
+SEQUEN[Methyl|formula:H(2)C]CE
 SEQUEN[glucosylgalactosyl|formula:O Hex(2)]CE
 ```
 
-The subcommittee settled on the use of the UniMod formula format with little discussion. After the final subcommittee meeting it was brought to Rich LeDuc’s attention that the UniMod notation has several flaws, and is not widely used.
+The subcommittee settled on the use of the Unimod formula format with little discussion. After the final subcommittee meeting it was brought to Rich LeDuc’s attention that the Unimod notation has several flaws, and is not widely used.
 
 It is standard for parenthesis in a chemical formula to indicate multiple identical groups (Source: bottom of Page 20 (32 in the PDF) from IUPAC’s Red Book https://www.iupac.org/cms/wp-content/uploads/2016/07/Red_Book_2005.pdf).
 There are many approved usages of parentheses, but elemental stoichiometry isn’t one (https://en.wikipedia.org/wiki/Structural_formula#Condensed_formulas).
@@ -88,12 +88,12 @@ SEQ[info: Some comment about this amino acid]UENCE
 ```
 #### MODIFICATION NAME
 Key (Optional): mod
-Specification: A common name for the modification. The default names are the UniMod Interim Names available here (http://www.unimod.org/modifications_list.php). 
+Specification: A common name for the modification. The default names are the Unimod Interim Names available here (http://www.unimod.org/modifications_list.php).
 ```
 SEQUEN[Methyl]CE
 ```
 
-When specifying a modification using a common name other than the UniMod Interim Name, provide the database name in parentheses.
+When specifying a modification using a common name other than the Unimod Interim Name, provide the database name in parentheses.
 ```
 PEPT[Phosphothreonine(UniProt)]IDE
 PEPT[O-phospho-L-threonine(RESID)]IDE
@@ -117,7 +117,7 @@ PEPT[PSI-MOD:MOD:00047]IDE
 ```
 
 Comment: There are a number of competing databases which provide both names and accession number for the various modifications that can occur to amino acids. It is not the intention of this protocol to force users to one or another of these databases.
- 
+
 Supported PTM databases
 Unimod (default) - http://www.unimod.org/modifications_list.php
 UniProt (recommended) - http://www.uniprot.org/docs/ptmlist
@@ -125,16 +125,16 @@ RESID (recommended) - http://pir.georgetown.edu/resid/resid.shtml
 PSI-MOD (recommended) - http://www.ebi.ac.uk/ols/ontologies/mod
 BRNO MOD (acceptable)
 UniCarbKB (acceptable) - http://www.unicarbkb.org/
-PRO Ontology/NCBI  (acceptable) -  http://pir.georgetown.edu/pro/ 
+PRO Ontology/NCBI  (acceptable) -  http://pir.georgetown.edu/pro/
 
-NOTE: We the subcommittee, ask the CTDP to recommend a small set of DBs as prefered, or to give formal guidance on how users should navigate the proliferation of modification databases. 
+NOTE: We the subcommittee, ask the CTDP to recommend a small set of DBs as prefered, or to give formal guidance on how users should navigate the proliferation of modification databases.
 
 ### Rule 6
-If all tags in a proteoform use the same Key, the sequence may be PREFIXED with a single tag defining the Key followed by a plus sign.
+If all tags in a proteoform use the same key, the sequence may be PREFIXED with a single tag defining the key followed by a plus sign.
 ```
 [RESID]+SE[12]QUE[42]NCE
 ```
-Here the numbers in brackets are accession numbers in the resid database
+Here the numbers in brackets are accession numbers in the RESID database
 ```
 [mass]+SE[12]QUE[42]NCE
 ```
@@ -156,7 +156,7 @@ The tag describing the terminal modifications is separated with a dash to the le
 * Machine Readable: Adherence to the conventions described above should facility the creation and utilization of generic parsers so that proteoforms could be exchanged between users using a computer interface.
 * Modification: Includes the addition and subtraction of specific atoms, atom combinations and/or masses, at a specific residue in a proteoform
 * Proteoform: A specific set of amino acids arranged in a particular order, which may be further modified (cotranslationally, posttranslationally or chemically) at designated locations.
-* Tag: The specified way of writing a localized modification. Everything between ‘[‘ and ‘]’ (inclusive). A collection of descriptors. 
+* Tag: The specified way of writing a localized modification. Everything between ‘[‘ and ‘]’ (inclusive). A collection of descriptors.
 * Value: Contents of a descriptor, such as the mass, chemical composition, or modification name.
 
 ## Best Practices
@@ -165,22 +165,22 @@ The best practices emphasize human readability and clarity of modification ident
 * If the identity of a modification is known, it should be listed. This improves the clarity over listing only masses or accessions.
 * Rule 6 should be used when there is only one element in the tag -- otherwise, human readability is compromised.
 * Spacing before and after each descriptor is arbitrary, and should be appropriately added to improve readability.
-* In the case of multiple key value pairs, UniMod interim names without key are recommended to come first for human readability.
+* In the case of multiple key-value pairs, Unimod interim names without key are recommended to come first for human readability.
 
 ## Examples
 ```
 [Acetyl]-S[Phospho|mass:79.966331]GRGK[Acetyl|Unimod:1|mass:42.010565]QGGKARAKAKTRSSRAGLQFPVGRVHRLLRKGNYAERVGAGAPVYLAAVLEYLTAEILELAGNAARDNKKTRIIPRHLQLAIRNDEELNKLLGKVTIAQGGVLPNIQAVLLPKKT[Unimod:21]ESHHKAKGK
 ```
 This is one way to write Histone H4 with several modifications. It is human-readable and conforms to the best practices.
-Long version: The sequence describes histone H4 having its N-terminal acetylated (Unimod interim name Acetyl), Serine 1 phosphorylated (Unimod interim name Phospho and mass 79.966331), Lysine 5 acetylated (Unimod interim name Acetyl, Unimod ID 1 and mass 42.010565) and Threonine 96 phosphorylated (Unimod accession 21). 
+Long version: The sequence describes histone H4 having its N-terminal acetylated (Unimod interim name Acetyl), Serine 1 phosphorylated (Unimod interim name Phospho and mass 79.966331), Lysine 5 acetylated (Unimod interim name Acetyl, Unimod ID 1 and mass 42.010565) and Threonine 96 phosphorylated (Unimod accession 21).
 ```
 [Unimod]+[mod: Acetyl]-S[mod: Phospho| mass:79.966331]GRGK[mod:Acetyl|1 |mass:42.010565]QGGKARAKAKTRSSRAGLQFPVGRVHRLLRKGNYAERVGAGAPVYLAAVLEYLTAEILELAGNAARDNKKTRIIPRHLQLAIRNDEELNKLLGKVTIAQGGVLPNIQAVLLPKKT[21]ESHHKAKGK
 ```
-Although this is valid, the UniMod accessions end up looking like mass, and thus may be less clear to a human reader. This violates best practices rule 3, which discourages the use of prefix notation with more than one descriptor. 
+Although this is valid, the Unimod accessions end up looking like mass, and thus may be less clear to a human reader. This violates best practices rule 3, which discourages the use of prefix notation with more than one descriptor.
 ```
 [Unimod]+[1]-S[21]GRGK[1]QGGKARAKAKTRSSRAGLQFPVGRVHRLLRKGNYAERVGAGAPVYLAAVLEYLTAEILELAGNAARDNKKTRIIPRHLQLAIRNDEELNKLLGKVTIAQGGVLPNIQAVLLPKKT[21]ESHHKAKGK
 ```
-This is a valid and compact way of specifying Unimod accessions in multiple locations in the sequence. 
+This is a valid and compact way of specifying Unimod accessions in multiple locations in the sequence.
 ```
 [myristoleylation|Myristoleyl(PSI-MOD)|info:Acylation]-MTLFQLLREHWVHILVPAGFVFGCYLDRKDDEK[di-Methylation|Dimethyl(PSI-MOD)]LTAFRNK[p-adenosine|N6-(phospho-5'-adenosine)-L-lysine(RESID)|RESID:AA0227|PSI-MOD:00232|N6AMPLys(PSI-MOD)]SMLFQRELRPNEEVTWK
 ```
