@@ -50,7 +50,8 @@ SEQUEN[mod:Methyl|mass:+14.02]CE
 This is read as a methylation of an asparagine residue, with a mass shift of +14.02 Da.
 
 ### Rule 5
-The supported descriptors are: Mass, Chemical Formula, Additional Information, Modification Name, and Database Accession. The use of each is detailed below. A key must be present in a descriptor if it is mandatory, and an optional key may be omitted.
+The supported descriptors are: Mass, Chemical Formula, Additional Information, Modification Name, and Database Accession. The use of each is detailed below. A key must be present in a descriptor if it is mandatory, and an optional key may be omitted. Descriptors may not contain the pipe character, and every square bracket must be closed.
+
 #### MASS
 Key (Mandatory): mass
 Specification: Mass difference in Daltons between the coded amino acid and the observed mass. Can be used to show the location of an unclassified mass shift. Arbitrary precision is allowed, and positive mass shifts can be specified with either a plus sign or no sign. Negative shifts must be specified with a negative sign. The mass is assumed to be observed monoisotopic unless there is an INFO tag (below) explaining otherwise.
@@ -81,7 +82,7 @@ The following resources don’t use parentheses in the way Unimod does
 
 #### ADDITIONAL INFORMATION
 Key (Mandatory): info
-Specification: This descriptor is used to signal that unstructured text has been added to the tag. It is expected that this will be used in the development of new descriptors, and is included to allow the maximum utility of this system. Descriptors may not contain the pipe character.
+Specification: This descriptor is used to signal that unstructured text has been added to the tag. It is expected that this will be used in the development of new descriptors, and is included to allow the maximum utility of this system. 
 
 ```
 SEQ[info: Some comment about this amino acid]UENCE
