@@ -131,14 +131,16 @@ NOTE: We the subcommittee, ask the CTDP to recommend a small set of DBs as prefe
 
 ### Rule 6
 If all tags in a proteoform use the same key, the sequence may be PREFIXED with a single tag defining the key followed by a plus sign.
+
+Here the numbers in brackets are accession numbers in the RESID database:
 ```
 [RESID]+SE[12]QUE[42]NCE
 ```
-Here the numbers in brackets are accession numbers in the RESID database
+Here the numbers in brackets are masses:
 ```
 [mass]+SE[12]QUE[42]NCE
 ```
-Here the numbers in brackets are masses
+Here the contents of the brackets are chemical formulas:
 ```
 [formula]+SE[CH(2)]QUE[H(2)O]NCE
 ```
