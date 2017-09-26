@@ -1,4 +1,4 @@
-# Proteoform Nomenclature
+# ProForma -- Proteoform Nomenclature
 
 ## Releases and Working Version
 
