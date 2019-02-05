@@ -2,6 +2,8 @@
 
 Published in the Journal of Proteome Research [here](https://pubs.acs.org/doi/10.1021/acs.jproteome.7b00851).
 
+![tocgraphic2](https://user-images.githubusercontent.com/16342951/52293228-36b9f580-292b-11e9-988d-e31e28e1f4b9.png)
+
 ## Releases and Working Version
 
 A numbered version of the standard notation PDF is found [here](https://github.com/topdownproteomics/proteoform-nomenclature-standard/releases).
