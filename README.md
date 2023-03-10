@@ -1,14 +1,24 @@
 # ProForma Proteoform Notation
 
-Published in the Journal of Proteome Research [here](https://pubs.acs.org/doi/10.1021/acs.jproteome.7b00851).
+## Version 2.0
+ProForma version 2.0 is [published in the Journal of Proteome Research](https://pubs.acs.org/doi/10.1021/acs.jproteome.1c00771).
 
-## Releases and Working Version
+ProForma is now being actively maintained by HUPO-PSI. Please see https://github.com/HUPO-PSI/ProForma.
+
+## Version 1.0
+ProForma version 1.0 is also [published in the Journal of Proteome Research](https://pubs.acs.org/doi/10.1021/acs.jproteome.7b00851).
+
+### 
+
+![tocgraphic2](https://user-images.githubusercontent.com/16342951/52293228-36b9f580-292b-11e9-988d-e31e28e1f4b9.png)
+
+### Releases and Working Version
 
 A numbered version of the standard notation PDF is found [here](https://github.com/topdownproteomics/proteoform-nomenclature-standard/releases).
 
 The work-in-progress version of the standard is [here](https://github.com/topdownproteomics/proteoform-nomenclature-standard/blob/master/Standard.md).
 
-## Introduction
+### Introduction
 
 Our subcommittee was tasked to propose a notation that can be used to write the sequence
 of a given proteoform. A proteoform is a specific set of amino acids arranged in a particular order,
@@ -22,7 +32,7 @@ Task: provide an unambiguous notation for writing an individual proteoform. The 
 * Contain the complete amino acid sequence of the observed proteoform
 * Specify the location and type of each modification.
 
-## Contributions
+### Contributions
 
 ### Notation rules
 We welcome comments, suggestions and extensions to the notation to ensure its widespread usage. They can be submitted as [issues](https://github.com/topdownproteomics/proteoform-nomenclature-standard/issues) and will then be discussed to find a common solution.
